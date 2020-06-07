@@ -1,4 +1,4 @@
-package com.company.project.core.constent;
+package com.company.project.constent;
 
 public enum Code {
     //通用部分

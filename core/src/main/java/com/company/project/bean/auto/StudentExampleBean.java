@@ -1,4 +1,4 @@
-package com.company.project.core.bean.auto;
+package com.company.project.bean.auto;
 
 public class StudentExampleBean {
     private Integer id;

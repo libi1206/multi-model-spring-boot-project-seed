@@ -1,7 +1,7 @@
-package com.company.project.core.response;
+package com.company.project.response;
 
 import com.alibaba.fastjson.JSONObject;
-import com.company.project.core.constent.Code;
+import com.company.project.constent.Code;
 
 /**
  * Created by superlee on 2017/11/6.

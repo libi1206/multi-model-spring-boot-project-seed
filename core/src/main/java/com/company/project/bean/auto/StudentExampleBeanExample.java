@@ -1,4 +1,4 @@
-package com.company.project.core.bean.auto;
+package com.company.project.bean.auto;
 
 import java.util.ArrayList;
 import java.util.List;

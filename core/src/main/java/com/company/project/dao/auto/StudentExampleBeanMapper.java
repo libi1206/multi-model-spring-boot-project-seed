@@ -1,7 +1,7 @@
-package com.company.project.core.dao.auto;
+package com.company.project.dao.auto;
 
-import com.company.project.core.bean.auto.StudentExampleBean;
-import com.company.project.core.bean.auto.StudentExampleBeanExample;
+import com.company.project.bean.auto.StudentExampleBean;
+import com.company.project.bean.auto.StudentExampleBeanExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;

@@ -1,7 +1,7 @@
-package com.company.project.core.exception;
+package com.company.project.exception;
 
 
-import com.company.project.core.constent.Code;
+import com.company.project.constent.Code;
 
 /**
  * 业务异常
