@@ -14,12 +14,12 @@ public final class BaseResultFactory {
         return new BaseResult(codeInt, msg);
     }
 
-    public static BaseResult produceResult(int codeInt, String msg, Object data) {
-        return new BaseResult(codeInt, msg, data);
+    public static <T> BaseResult<T> produceResult(int codeInt, String msg, T data) {
+        return new BaseResult<T>(codeInt, msg, data);
     }
 
-    public static BaseResult produceResult(Code code, Object data) {
-        return new BaseResult(code.getCode(), code.getMsg(), data);
+    public static <T> BaseResult<T> produceResult(Code code, T data) {
+        return new BaseResult<T>(code.getCode(), code.getMsg(), data);
     }
 
 

@@ -32,6 +32,7 @@ parent 最外层的聚合模块 <br>
 
 * 全局的常量字符串可以放到`ProjectConstant`类中，全局的返回之后状态码可以放到`Code`类中
 * 所有的service都会返回一个基础的响应结构`BaseResult`，使用`BaseResultFactory`类中的方法传入`Code`对象和承载返回数据的POJO就可以快速打造规范化的响应
+* 建议：在Service中返回的对象都应该是**带泛型的`BaseResult`类**的对象（除了data是空的情况），这样代码的可阅读性会大大提升。
 
 
 

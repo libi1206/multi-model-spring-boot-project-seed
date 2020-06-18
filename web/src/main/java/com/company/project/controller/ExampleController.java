@@ -1,5 +1,6 @@
 package com.company.project.controller;
 
+import com.company.project.bean.auto.StudentExampleBean;
 import com.company.project.response.BaseResult;
 import com.company.project.model.StudentDTO;
 import com.company.project.service.ExampleService;
@@ -22,7 +23,7 @@ public class ExampleController {
 
     @ApiOperation(value = "增加学生", notes = "增加学生记录")
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public BaseResult insert(
+    public BaseResult<StudentExampleBean> insert(
             @RequestBody StudentDTO studentDTO
     ) {
         return exampleService.addStudent(studentDTO);
@@ -30,7 +31,7 @@ public class ExampleController {
 
     @ApiOperation(value = "查询学生", notes = "查询学生记录")
     @RequestMapping(value = "/select", method = RequestMethod.GET)
-    public BaseResult select(
+    public BaseResult<StudentExampleBean> select(
             @RequestParam Integer studentId
     ) {
         return exampleService.selectStudent(studentId);
