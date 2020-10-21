@@ -5,5 +5,5 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/example?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
     username: root
     password: libi1206
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
