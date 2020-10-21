@@ -5,5 +5,11 @@ spring:
   resources:
     add-mappings: true
 
+# 使用logback做日志拆分，在服务器上部署时可以按照时间/大小拆分日志，并且可以定时删除以保证日志文件不会沾满服务器空间
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: info
+
 server:
   port: 9000
