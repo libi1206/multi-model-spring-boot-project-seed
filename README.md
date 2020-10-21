@@ -41,3 +41,7 @@ parent 最外层的聚合模块 <br>
 * 本系统拥有异常处理器：`GlobalExceptionHandlerAdvice`,在**业务代码**的任何地方都可以抛出异常，异常都会被异常处理器捕获并且抛出`BaseResult`
 * 有标准的业务异常类`BusinessException`，推荐相关的业务异常继承这个类，业务流程中直接抛出，然后在异常处理器中处理
 
+### 5. 权限控制
+
+* 本系统使用了`HandlerMethodArgumentResolver` 进行权限控制，只需要在controller层的参数中加入`TokenInfo`对象并且加上`@RequestToken`注解，就可以在`TokenArgumentResolver` 对象里进行统一的token解析和构造`TokenInfo`对象
+* 具体的获取token和解析的操作要自己实现

@@ -1,6 +1,7 @@
 package com.company.project.service;
 
 import com.company.project.bean.auto.StudentExampleBean;
+import com.company.project.model.TokenInfo;
 import com.company.project.response.BaseResult;
 import com.company.project.model.StudentDTO;
 
@@ -11,7 +12,7 @@ import com.company.project.model.StudentDTO;
  *
  */
 public interface ExampleService {
-    BaseResult<StudentExampleBean> addStudent(StudentDTO studentDTO);
+    BaseResult<StudentExampleBean> addStudent(TokenInfo tokenInfo, StudentDTO studentDTO);
 
     BaseResult<StudentExampleBean> selectStudent(Integer studentId);
 }

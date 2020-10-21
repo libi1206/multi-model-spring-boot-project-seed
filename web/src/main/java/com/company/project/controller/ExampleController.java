@@ -1,6 +1,8 @@
 package com.company.project.controller;
 
+import com.company.project.annotation.RequestToken;
 import com.company.project.bean.auto.StudentExampleBean;
+import com.company.project.model.TokenInfo;
 import com.company.project.response.BaseResult;
 import com.company.project.model.StudentDTO;
 import com.company.project.service.ExampleService;
@@ -8,6 +10,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 /**
  * @author :Libi
@@ -24,9 +27,10 @@ public class ExampleController {
     @ApiOperation(value = "增加学生", notes = "增加学生记录")
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public BaseResult<StudentExampleBean> insert(
+            @RequestToken @ApiIgnore TokenInfo tokenInfo,
             @RequestBody StudentDTO studentDTO
     ) {
-        return exampleService.addStudent(studentDTO);
+        return exampleService.addStudent(tokenInfo, studentDTO);
     }
 
     @ApiOperation(value = "查询学生", notes = "查询学生记录")
