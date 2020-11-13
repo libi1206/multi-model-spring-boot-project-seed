@@ -1,6 +1,7 @@
 package com.company.project.service.impl;
 
 import com.company.project.bean.auto.StudentExampleBean;
+import com.company.project.bean.auto.StudentExampleBeanExample;
 import com.company.project.constent.Code;
 import com.company.project.dao.auto.StudentExampleBeanMapper;
 import com.company.project.exception.BusinessException;
@@ -9,6 +10,8 @@ import com.company.project.response.BaseResult;
 import com.company.project.response.BaseResultFactory;
 import com.company.project.model.StudentDTO;
 import com.company.project.service.ExampleService;
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,6 +48,13 @@ public class ExampleServiceImpl implements ExampleService {
             throw new BusinessException(Code.ERROR);
         }
         return BaseResultFactory.produceResult(Code.SUCCESS, bean);
+    }
+
+    @Override
+    public BaseResult<Page> selectAll(Integer page, Integer pageSize) {
+        Page<Object> ret = PageHelper.startPage(page, pageSize);
+        studentExampleBeanMapper.selectByExample(new StudentExampleBeanExample());
+        return BaseResultFactory.produceResult(Code.SUCCESS, ret);
     }
 
 }

@@ -6,6 +6,7 @@ import com.company.project.model.TokenInfo;
 import com.company.project.response.BaseResult;
 import com.company.project.model.StudentDTO;
 import com.company.project.service.ExampleService;
+import com.github.pagehelper.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,5 +40,14 @@ public class ExampleController {
             @RequestParam Integer studentId
     ) {
         return exampleService.selectStudent(studentId);
+    }
+
+    @ApiOperation(value = "查询所有学生",notes = "陈宣所有学生")
+    @RequestMapping(value = "/all",method = RequestMethod.GET)
+    public BaseResult<Page> all(
+            @RequestParam Integer page,
+            @RequestParam Integer pageSize
+    ){
+        return exampleService.selectAll(page, pageSize);
     }
 }

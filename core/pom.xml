@@ -45,10 +45,12 @@
             <artifactId>mapper</artifactId>
             <version>3.4.2</version>
         </dependency>
+
+        <!--PageHelper-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper</artifactId>
-            <version>4.2.1</version>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.10</version>
         </dependency>
 
         <!--阿里 Druid Spring Boot Starter依赖-->
