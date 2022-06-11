@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
  * @date 2019-09-16
  */
 @Configuration
-@AutoConfigureAfter(MybatisConfigurer.class)
+@AutoConfigureAfter(MybatisConfigure.class)
 public class MyBatisMapperScannerConfig {
 
     @Bean
