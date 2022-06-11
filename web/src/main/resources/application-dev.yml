@@ -2,16 +2,42 @@
 # 数据源配置，请修改为你项目的实际配置
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/example?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    url: jdbc:mysql://192.168.56.101:3306/test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
     username: root
-    password: libi1206
+    password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
-
-#pagehelper配置
-pagehelper:
-  helperDialect: mysql
-  # 分页合理化参数，默认值为false。当该参数设置为 true 时，pageNum<=0 时会查询第一页， pageNum>pages（超过总数时），会查询最后一页
-  reasonable: true
-  # 支持通过 Mapper 接口参数来传递分页参数
-  supportMethodsArguments: true
+    druid:
+      stat-view-servlet:
+        url-pattern: /druid/*
+      web-stat-filter:
+        enabled: true
+        exclusions: '*.js,*.gif,*.jpg,*.bmp,*.png,*.css,*.ico,/druid/*'
+        url-pattern: /*
+      default-auto-commit: true
+      filters: stat,wall
+      initial-size: 1
+      log-abandoned: true
+      max-active: 200
+      max-pool-prepared-statement-per-connection-size: 1000
+      max-wait: 60000
+      min-evictable-idle-time-millis: 30000
+      pool-prepared-statements: true
+      remove-abandoned: true
+      remove-abandoned-timeout-millis: 180000
+      test-on-borrow: true
+      test-on-return: true
+      test-while-idle: true
+      time-between-eviction-runs-millis: 1000
+      validation-query: select 1
+mybatis-plus:
+  # mybatis-plus配置
+  mapper-locations: classpath:sqlmap/*.xml
+  type-aliases-package: com.company.project.bean
+  configuration:
+    local-cache-scope: statement
+  global-config:
+    db-config:
+      # 逻辑删除配置
+      logic-delete-value: 0
+      logic-not-delete-value: 1
 

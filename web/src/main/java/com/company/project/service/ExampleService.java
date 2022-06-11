@@ -1,10 +1,10 @@
 package com.company.project.service;
 
-import com.company.project.bean.auto.StudentExampleBean;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.company.project.bean.Student;
 import com.company.project.model.TokenInfo;
 import com.company.project.response.BaseResult;
 import com.company.project.model.StudentDTO;
-import com.github.pagehelper.Page;
 
 /**
  * @author :Libi
@@ -12,9 +12,9 @@ import com.github.pagehelper.Page;
  * @date :2020-04-03 14:56
  */
 public interface ExampleService {
-    BaseResult<StudentExampleBean> addStudent(TokenInfo tokenInfo, StudentDTO studentDTO);
+    BaseResult<Student> creationStudent(TokenInfo tokenInfo, StudentDTO studentDTO);
 
-    BaseResult<StudentExampleBean> selectStudent(Integer studentId);
+    BaseResult<Student> selectStudent(Integer studentId);
 
-    BaseResult<Page> selectAll(Integer page, Integer pageSize);
+    BaseResult<IPage> selectAll(Integer page, Integer pageSize);
 }
