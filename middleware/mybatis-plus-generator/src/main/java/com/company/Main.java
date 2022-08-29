@@ -40,7 +40,7 @@ public class Main {
 
     private static final String parentPackage="com.company";
 
-    private static final String datasourcePackageName="dao";
+//    private static final String datasourcePackageName="dao";
 
     public static void main(String[] args) throws SQLException {
 
@@ -97,12 +97,12 @@ public class Main {
         // 4. 包名策略配置
         PackageConfig pkConfig = new PackageConfig();
         pkConfig.setParent(parentPackage)
-                .setMapper(datasourcePackageName+".mapper")// dao
+                .setMapper("dao")// dao
                 .setService("service")// servcie
                 .setServiceImpl("service.impl")
                 .setController("controller")// controller
-                .setEntity(datasourcePackageName+".bean")
-                .setXml(datasourcePackageName+".sqlmap");// mapper.xml
+                .setEntity("bean")
+                .setXml("sqlmap");// mapper.xml
 
         // 5. 整合配置
         AutoGenerator ag = new AutoGenerator();

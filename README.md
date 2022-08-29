@@ -16,11 +16,20 @@ parent 最外层的聚合模块 <br>
 ## 相关配置
 ### MyBatis Generator和数据库配置
 * 相关的代码全部在`core`模块中
+
 * generator的配置文件：`sqlmap/auto/StudentExampleBeanMapper.xml`，修改其中的数据库信息和需要更改的表信息就好
+
 * `core`模块的maven中配置了Generator的maven插件，修改好了generator的配置后使用插件启动generator即可
+
 * generator会生成mapper.xml文件、mapper接口和Bean类（Pojo类），会放在起名为auto的文件夹/包下，我已经放入了用于演示的文件
+
 * DataSource的bean配置在Core模块中，这样每个依赖core模块的模块都可以不用再写一遍dataSource，但是需要注意的是**依赖core模块的基础报名必须要和core模块的基础包名一样**，不然的话会导致DataSource这个Bean无法被注入
+
 * 其他的模块虽然不用写DataSource这个Bean，但是还是需要在`application.yml`中配置数据库相关信息
+
+  #### 约定：
+
+  1. 由Generator
 
 ### 2. swagger
 
